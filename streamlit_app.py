@@ -13,8 +13,11 @@ def publish_output(search: str) -> None:
             st.subheader('Content')
             st.write(page.content)
             st.subheader('Images')
-            for image in page.images:
-                st.image(image)
+            if len(page.images) > 0:
+                for image in page.images:
+                    st.image(image)
+            else:
+                st.write('Images are not available')
     except:
         st.write('Content Not Found')
 
