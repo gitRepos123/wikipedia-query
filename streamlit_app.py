@@ -5,7 +5,7 @@ st.header('Wiki Search')
 
 def publish_output(search: str) -> None:
     try:
-        page = wk.page(title = search)
+        page = wk.page(search, auto_suggest = False)
         if page != None:
             st.header(page.title)
             st.subheader('Summary')
