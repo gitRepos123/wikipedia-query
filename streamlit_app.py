@@ -7,7 +7,7 @@ def publish_output(search: str) -> None:
     try:
         page = wk.page(title = search)
         if page != None:
-            st.subheader(page.title)
+            st.header(page.title)
             st.subheader('Summary')
             st.write(page.summary)
             st.subheader('Content')
