@@ -4,22 +4,19 @@ import wikipedia as wk
 st.header('Wiki Search')
 
 def publish_output(search: str) -> None:
-    page = wk.page(title = search)
-    if page != None:
-        st.subheader(page.title)
-        st.subheader('Summary')
-        st.write(page.summary)
-        st.subheader('Content')
-        st.write(page.content)
-        st.subheader('Images')
-        for image in page.images:
-            st.image(image)
-        st.subheader('Links')
-        for link in page.links:
-            st.write(link)
-        st.subheader('References')
-        for reference in page.references:
-            st.write(reference)
+    try:
+        page = wk.page(title = search)
+        if page != None:
+            st.subheader(page.title)
+            st.subheader('Summary')
+            st.write(page.summary)
+            st.subheader('Content')
+            st.write(page.content)
+            st.subheader('Images')
+            for image in page.images:
+                st.image(image)
+    except:
+        st.write('Content Not Found')
 
 def init_app():
     search = None
