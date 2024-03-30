@@ -16,7 +16,7 @@ def publish_output(search: str) -> None:
             st.image(image)
         st.subheader('Links')
         for link in page.links:
-            st.page_link(link)
+            st.write(link)
         st.subheader('References')
         for reference in page.references:
             st.write(reference)
